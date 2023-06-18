@@ -13,3 +13,10 @@
     color: var(--primaty-color);
     min-height: 100vh;
 }
+.content-page {
+    display: flex;
+    padding-top: var(--navbar-height);
+}
+.page-wrapper {
+    flex-grow: 1;
+}

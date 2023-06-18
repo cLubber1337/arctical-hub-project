@@ -6,6 +6,8 @@
   display: flex;
   align-items: center;
   padding: 20px;
+  position: fixed;
+  z-index: 9;
 }
 .links {
   margin-left: auto;
