@@ -4,8 +4,18 @@
 
 .primary {
   color: var(--primaty-color);
+
+  &:hover {
+    color: var(--secondary-color);
+    transition: 0.3s ease-in-out;
+  }
 }
 
 .secondary {
   color: var(--secondary-color);
+
+  &:hover {
+    color: var(--primaty-color);
+    transition: 0.3s ease-in-out;
+  }
 }

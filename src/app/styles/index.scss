@@ -8,6 +8,7 @@
   background-color: var(--bg-color);
   color: var(--primaty-color);
   min-height: 100vh;
+  font-family: var(--font-family-main);
 }
 
 .content-page {
@@ -33,4 +34,11 @@
     transition: all 0.3s ease-in-out;
     box-shadow: 0 0 20px 0 rgb(220 20 60 / 50%);
   }
+}
+
+.sb-show-main.sb-main-padded {
+  margin: 0;
+  padding: 0;
+  display: block;
+  box-sizing: border-box;
 }
