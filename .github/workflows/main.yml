@@ -19,6 +19,7 @@ jobs:
         with:
           fetch-depth: 0
           submodules: recursive
+          repository: https://github.com/cLubber1337/arctical-hub-project.git
           ref: ${{ github.ref }}
           path: my-repo
           # Автоматически конвертировать символы переноса строки в 'CRLF'
