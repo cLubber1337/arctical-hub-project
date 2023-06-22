@@ -16,15 +16,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          submodules: recursive
-          # Исправлен параметр repository
-          repository: cLubber1337/arctical-hub-project
-          ref: ${{ github.ref }}
-          path: my-repo
-          # Исправлен параметр git-config на config
-          config: core.autocrlf=input
 
       - name: Staring Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
