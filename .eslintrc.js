@@ -37,7 +37,7 @@ module.exports = {
       "code": 100,
       "ignoreComments": true
     }],
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": 0,
     quotes: ["error", "double"],
     semi: ["error", "never"],
     "react/jsx-filename-extension": [2, {
