@@ -1,5 +1,13 @@
 name: CI
 
+with:
+  fetch-depth: 0
+  submodules: recursive
+  ref: ${{ github.ref }}
+  path: my-repo
+  # Автоматически конвертировать символы переноса строки в 'CRLF'
+  git-config: core.autocrlf=input
+
 on:
   push:
     branches: [main]
