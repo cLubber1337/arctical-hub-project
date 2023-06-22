@@ -1,13 +1,5 @@
 name: CI
 
-with:
-  fetch-depth: 0
-  submodules: recursive
-  ref: ${{ github.ref }}
-  path: my-repo
-  # Автоматически конвертировать символы переноса строки в 'CRLF'
-  git-config: core.autocrlf=input
-
 on:
   push:
     branches: [main]
@@ -22,7 +14,15 @@ jobs:
         node-version: [18.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: recursive
+          ref: ${{ github.ref }}
+          path: my-repo
+          # Автоматически конвертировать символы переноса строки в 'CRLF'
+          git-config: core.autocrlf=input
 
       - name: Staring Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
