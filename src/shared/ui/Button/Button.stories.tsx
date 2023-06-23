@@ -1,39 +1,60 @@
 import React from "react"
-import { ComponentStory, ComponentMeta } from "@storybook/react"
+import { ComponentMeta, ComponentStory } from "@storybook/react"
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator"
 import { Theme } from "app/providers/ThemeProvider"
-import { Button, ThemeButton } from "./Button"
+import { Button, ButtonVariant } from "./Button"
 
 export default {
   title: "shared/Button",
   component: Button,
-  argTypes: {
-    backgroundColor: { control: "color" },
+  args: {
+    children: "Button",
   },
 } as ComponentMeta<typeof Button>
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
-export const Primary = Template.bind({})
-Primary.args = {
-  children: "Text",
+// Variants
+export const Contained = Template.bind({})
+Contained.args = {
+  variant: ButtonVariant.CONTAINED
 }
-
 export const Clear = Template.bind({})
 Clear.args = {
-  children: "Text",
-  theme: ThemeButton.CLEAR,
+  variant: ButtonVariant.CLEAR,
 }
-
 export const Outline = Template.bind({})
 Outline.args = {
-  children: "Text",
-  theme: ThemeButton.OUTLINE,
+  variant: ButtonVariant.OUTLINE,
 }
 
+// Circle
+export const Circle = Template.bind({})
+Circle.args = {
+  variant: ButtonVariant.CONTAINED,
+  circle: true,
+  children: ">"
+}
+
+// Theme color in dark
 export const OutlineDark = Template.bind({})
 OutlineDark.args = {
-  children: "Text",
-  theme: ThemeButton.OUTLINE,
+  variant: ButtonVariant.OUTLINE,
 }
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const ContainedDark = Template.bind({})
+ContainedDark.args = {
+  variant: ButtonVariant.CONTAINED,
+}
+ContainedDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const CircleDark = Template.bind({})
+CircleDark.args = {
+  variant: ButtonVariant.CONTAINED,
+  circle: true,
+  children: ">"
+}
+CircleDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+

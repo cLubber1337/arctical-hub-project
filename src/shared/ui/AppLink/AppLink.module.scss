@@ -6,8 +6,9 @@
   color: var(--primaty-color);
 
   &:hover {
-    color: var(--secondary-color);
     transition: 0.3s ease-in-out;
+    background: var(--color-link-hover);
+    border-radius: 6px;
   }
 }
 

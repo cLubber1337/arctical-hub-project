@@ -5,7 +5,7 @@
 
 .app {
   font: var(--font-m);
-  background-color: var(--bg-color);
+  background-color: var(--bg-color-body);
   color: var(--primaty-color);
   min-height: 100vh;
   font-family: var(--font-family-main);
@@ -18,22 +18,6 @@
 
 .page-wrapper {
   flex-grow: 1;
-}
-
-.testBtn {
-  padding: 8px 10px;
-  border-radius: 5px;
-  background-color: red;
-  color: white;
-  border: none;
-  font: var(--font-m);
-  font-weight: bold;
-
-  &:hover {
-    background-color: rgb(220 20 60);
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 20px 0 rgb(220 20 60 / 50%);
-  }
 }
 
 .sb-show-main.sb-main-padded {

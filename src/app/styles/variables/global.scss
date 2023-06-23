@@ -6,14 +6,25 @@
   --font-size-l: 24px;
   --font-line-l: 32px;
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+  --font-size-xl: 32px;
+  --font-line-xl: 40px;
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
 
-  // Размеры
+  // Sizes
   --navbar-height: 60px;
-  --sidebar-width: 240px;
+  --sidebar-width: 200px;
   --sidebar-width-collapsed: 80px;
 
   // font-weight
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
+
+  // Colors
+  --color-btn-bg-primary: #9147ff;
+  --color-btn-hover-primary: #5c16c5;
+  --color-white: #fff;
+  --color-btn-bg-outline: #5c16c5;
+  --color-btn-hover-outline: rgb(92 22 197 / 20%);
+  --color-link-hover: rgb(83 83 95 / 10%);
 }
