@@ -25,7 +25,7 @@ module.exports = {
       jsx: true
     }
   },
-  plugins: ["@typescript-eslint", "react", "i18next"],
+  plugins: ["@typescript-eslint", "react", "i18next", "react-hooks"],
   "settings": {
     "react": {
       "version": "17.0.2"
@@ -51,6 +51,7 @@ module.exports = {
       ignoreAttribute: ["data-testid", "to"]
     }],
     "@typescript-eslint/no-var-requires": "off",
-
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error"
   }
 }

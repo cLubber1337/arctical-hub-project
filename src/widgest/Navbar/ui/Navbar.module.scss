@@ -7,12 +7,12 @@
   align-items: center;
   padding: 20px;
   position: fixed;
-  z-index: 9;
+  z-index: var(--z-index-navbar);
 }
 
 .links {
   margin-left: auto;
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold) !important;
 }
 
 .mainLink {

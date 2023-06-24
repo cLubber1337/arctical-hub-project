@@ -27,4 +27,9 @@
   --color-btn-bg-outline: #5c16c5;
   --color-btn-hover-outline: rgb(92 22 197 / 20%);
   --color-link-hover: rgb(83 83 95 / 10%);
+
+  // z-index
+  --z-index-navbar: 1;
+  --z-index-modal: 9;
+  --z-index-modal-closed: -1;
 }

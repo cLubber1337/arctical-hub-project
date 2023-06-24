@@ -13,6 +13,10 @@
 .clear {
   color: var(--primaty-color);
   background-color: transparent;
+
+  &:hover {
+    color: var(--color-btn-hover-primary);
+  }
 }
 
 .outline {

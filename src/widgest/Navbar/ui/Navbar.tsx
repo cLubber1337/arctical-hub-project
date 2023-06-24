@@ -1,20 +1,28 @@
-import React from "react"
+import React, { useCallback, useState } from "react"
 import styles from "./Navbar.module.scss"
 import { classNames } from "shared/lib/classNames/classNames"
+import { Button, ButtonVariant } from "shared/ui/Button/Button"
+import { useTranslation } from "react-i18next"
+import { Modal } from "shared/ui/Modal/Modal"
 
 
-interface NavbarProps {
-    className?: string
-}
+export const Navbar = () => {
 
-
-export const Navbar = ({ className }: NavbarProps) => {
+  const { t } = useTranslation()
+  const [isAuthModal, setIsAuthModal] = useState(false)
+  const onToggle = useCallback(() => {
+    setIsAuthModal(prevState => !prevState)
+  }, [])
 
   return (
     <div className={classNames(styles.navbar)}>
-      <div className={styles.links}>
+      <Button onClick={onToggle} variant={ButtonVariant.CLEAR} className={styles.links}>
+        {t("Войти")}
+      </Button>
 
-      </div>
+      <Modal isOpen={isAuthModal} onClose={onToggle}>
+        {t("Вы вошли")}
+      </Modal>
     </div>
   )
 }
