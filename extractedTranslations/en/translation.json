@@ -1,4 +1,6 @@
 {
+  "DEC": "DEC",
+  "INC": "INC",
   "O сайте": "About us",
   "Аб-ра Языка": "ENG",
   "Войти": "Login",
@@ -10,5 +12,7 @@
   "Переключить": "Переключить",
   "Произошла непредвиденная ошибка": "An unexpected error has occurred",
   "Страница не найдена": "Page not found",
+  "Увеличить": "Increment",
+  "Уменьшить": "Decrement",
   "Язык": "English"
 }
