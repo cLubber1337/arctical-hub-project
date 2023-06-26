@@ -1,17 +1,22 @@
 import styles from "./Modal.module.scss"
 import { classNames } from "shared/lib/classNames/classNames"
 import React, { ReactNode, useCallback, useEffect, useRef, useState } from "react"
+import { useTheme } from "app/providers/ThemeProvider"
+import { Portal } from "shared/ui/Portal/Portal"
+
+const ANIMATION_DELAY = 300
 
 interface ModalProps {
-    className?: string
-    children?: ReactNode
-    isOpen?: boolean
-    onClose?: () => void
+  className?: string
+  children?: ReactNode
+  isOpen?: boolean
+  onClose?: () => void
 }
 
 export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
   const [isClosed, setIsClosed] = useState(false)
   const timerRef = useRef<NodeJS.Timeout>()
+  const { theme } = useTheme()
 
   const mods = {
     [styles.opened]: isOpen,
@@ -26,7 +31,7 @@ export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
       timerRef.current = setTimeout(() => {
         onClose()
         setIsClosed(false)
-      }, 300)
+      }, ANIMATION_DELAY)
     }
   }, [onClose])
 
@@ -47,18 +52,18 @@ export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
     }
   }, [isOpen, keyHandler])
 
-
   return (
-
-    <div className={classNames(styles.Modal, mods, [className])}>
-      <div className={styles.overlay} onClick={closeHandler}>
-        <div className={styles.content} onClick={stopPropagationHandler}>
-          {children}
+    <Portal>
+      <div className={classNames(styles.Modal, mods, [className, theme])}>
+        <div className={styles.overlay} onClick={closeHandler}>
+          <div
+            className={classNames(styles.content)}
+            onClick={stopPropagationHandler}
+          >
+            {children}
+          </div>
         </div>
       </div>
-    </div>
-
+    </Portal>
   )
 }
-
-
