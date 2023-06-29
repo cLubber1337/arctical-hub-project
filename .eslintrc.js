@@ -41,6 +41,7 @@ module.exports = {
       "code": 100,
       "ignoreComments": true
     }],
+    "react/display-name": "off",
     "linebreak-style": 0,
     quotes: ["error", "double"],
     semi: ["error", "never"],
