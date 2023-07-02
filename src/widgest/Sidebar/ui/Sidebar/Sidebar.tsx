@@ -43,23 +43,28 @@ export const Sidebar = ({ className }: SidebarProps) => {
         <AppLink
           theme={AppLinkTheme.PRIMARY}
           to={RoutePath.main}
-          className={classNames(styles.navigation__item,
-            { [styles.navigation__item__collapsed]:collapsed })}
+          className={styles.navigation__item}
         >
-          <HomeIcon className={styles.navigation__icon} />
-          { !collapsed &&t("Главная")}
+          <HomeIcon className={styles.navigation__item__icon} />
+          <span className={styles.navigation__item__link}>
+            {t("Главная")}
+          </span>
         </AppLink>
 
         <AppLink
           theme={AppLinkTheme.PRIMARY}
           to={RoutePath.about}
-          className={classNames(styles.navigation__item,
-            { [styles.navigation__item__collapsed]:collapsed })}
+          className={styles.navigation__item}
         >
-          <InfoIcon className={styles.navigation__icon}/>
-          { !collapsed && t("O сайте") }
+          <InfoIcon className={styles.navigation__item__icon}/>
+          <span className={styles.navigation__item__link}>
+            {t("O сайте")}
+          </span>
         </AppLink>
+
       </div>
+
+
 
       <div className={styles.switchers}>
         <LangSwitcher shortName={collapsed}/>

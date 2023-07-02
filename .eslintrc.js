@@ -38,7 +38,7 @@ module.exports = {
   rules: {
     indent: ["error", 2],
     "max-len": ["error", {
-      "code": 100,
+      "code": 120,
       "ignoreComments": true
     }],
     "react/display-name": "off",

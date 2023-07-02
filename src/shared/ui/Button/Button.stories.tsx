@@ -27,6 +27,11 @@ export const Outline = Template.bind({})
 Outline.args = {
   variant: ButtonVariant.OUTLINE,
 }
+export const Disabled = Template.bind({})
+Disabled.args = {
+  variant: ButtonVariant.CONTAINED,
+  disabled: true,
+}
 
 // Circle
 export const Circle = Template.bind({})

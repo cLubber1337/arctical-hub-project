@@ -10,14 +10,3 @@
   gap: 10px;
   margin-bottom: 16px;
 }
-
-.input {
-  height: 40px;
-  border: 2px solid var(--color-btn-bg-primary);
-  border-radius: 6px;
-  padding: 0 10px;
-
-  &:focus {
-    border: 2px solid var(--color-btn-hover-primary);
-  }
-}
