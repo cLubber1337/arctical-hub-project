@@ -1,5 +1,7 @@
 import { Modal } from "shared/ui/Modal/Modal"
-import { LoginForm } from "../LoginForm/LoginForm"
+import { Suspense } from "react"
+import { LoginFormAsync } from "features/AuthByUsername/ui/LoginForm/LoginForm.async"
+import { Loader } from "shared/ui/Loader/Loader"
 
 interface LoginModalProps {
     isOpen: boolean
@@ -14,7 +16,9 @@ export const LoginModal = ({ onClose, isOpen }: LoginModalProps) => {
       onClose={onClose}
       lazy
     >
-      <LoginForm/>
+      <Suspense fallback={<Loader />}>
+        <LoginFormAsync />
+      </Suspense>
     </Modal>
   )
 }
