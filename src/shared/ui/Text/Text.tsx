@@ -1,6 +1,6 @@
 import styles from "./Text.module.scss"
 import { classNames } from "shared/lib/classNames/classNames"
-import { useTranslation } from "react-i18next"
+import { memo } from "react"
 
 export enum TextTheme {
     PRIMARY = "primary",
@@ -14,8 +14,7 @@ interface TextProps {
     theme?: TextTheme
 }
 
-export const Text = ({ className, title, text, theme = TextTheme.PRIMARY }: TextProps) => {
-  const { t } = useTranslation()
+export const Text = memo(({ className, title, text, theme = TextTheme.PRIMARY }: TextProps) => {
 
   const mods: Record<string, boolean> = {
     [styles[theme]]: true,
@@ -27,6 +26,6 @@ export const Text = ({ className, title, text, theme = TextTheme.PRIMARY }: Text
       {text && <p className={styles.text}>{text} </p>}
     </div>
   )
-}
+})
 
 

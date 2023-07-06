@@ -3,17 +3,12 @@
     {
       "id": "1",
       "title": "json-server",
-      "userId": 1
+      "userId": "1"
     },
     {
       "id": "2",
       "title": "json-server",
       "userId": "2"
-    },
-    {
-      "username": "admin",
-      "password": "123",
-      "id": "3"
     }
   ],
   "comments": [
@@ -31,6 +26,13 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "first": "Андрей",
+    "lastname": "Сороко",
+    "age": 30,
+    "currency": "USD",
+    "country": "Belarus",
+    "city": "Minsk",
+    "username": "admin",
+    "avatar": "https://social-network.samuraijs.com/activecontent/images/users/27740/user.jpg?v=12"
   }
 }

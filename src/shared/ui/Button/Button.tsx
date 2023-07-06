@@ -1,6 +1,6 @@
 import styles from "./Button.module.scss"
 import { classNames } from "shared/lib/classNames/classNames"
-import { ButtonHTMLAttributes, FC } from "react"
+import { ButtonHTMLAttributes, memo, ReactNode } from "react"
 
 export enum ButtonVariant {
     CLEAR = "clear",
@@ -21,23 +21,29 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     circle?: boolean
     size?: ButtonSize
     disabled?: boolean
+    children: ReactNode
 }
 
-export const Button: FC<ButtonProps> =
-    ({ className, children, variant = ButtonVariant.CONTAINED,
-      circle, size = ButtonSize.M, disabled = false, ...otherProps }) => {
+export const Button = memo(({
+  className,
+  children,
+  variant = ButtonVariant.CONTAINED,
+  circle, size = ButtonSize.M,
+  disabled = false,
+  ...otherProps
+}: ButtonProps) => {
 
-      const mods: Record<string, boolean> = {
-        [styles.circle]: circle,
-        [styles.disabled]: disabled,
-      }
+  const mods: Record<string, boolean> = {
+    [styles.circle]: circle,
+    [styles.disabled]: disabled,
+  }
 
-      return (
-        <button disabled={disabled} className={classNames(styles.Button,
-          mods, [className, styles[variant], styles[size]])}
-        {...otherProps}
-        >
-          {children}
-        </button>
-      )
-    }
+  return (
+    <button disabled={disabled} className={classNames(styles.Button,
+      mods, [className, styles[variant], styles[size]])}
+    {...otherProps}
+    >
+      {children}
+    </button>
+  )
+})

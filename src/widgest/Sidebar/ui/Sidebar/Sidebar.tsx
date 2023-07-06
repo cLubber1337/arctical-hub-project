@@ -1,14 +1,11 @@
 import styles from "./Sidebar.module.scss"
 import { classNames } from "shared/lib/classNames/classNames"
-import React, { useState } from "react"
+import React, { memo, useState } from "react"
 import { Button, ButtonSize, ButtonVariant } from "shared/ui/Button/Button"
 import { ThemeSwitcher } from "shared/ui/ThemeSwitcher"
 import { LangSwitcher } from "shared/ui/LangSwitcher/LangSwitcher"
-import { useTranslation } from "react-i18next"
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink"
-import { RoutePath } from "shared/config/routeConfig/routeConfig"
-import HomeIcon from "shared/assets/icons/home.svg"
-import InfoIcon from "shared/assets/icons/info.svg"
+import { SidebarItemsList } from "widgest/Sidebar/model/items"
+import { SidebarItem } from "widgest/Sidebar/ui/SidebarItem/SidebarItem"
 
 
 interface SidebarProps {
@@ -16,9 +13,8 @@ interface SidebarProps {
 }
 
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false)
-  const { t } = useTranslation()
 
 
   const onToggle = () => {
@@ -40,37 +36,15 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </Button>
 
       <div className={styles.navigation}>
-        <AppLink
-          theme={AppLinkTheme.PRIMARY}
-          to={RoutePath.main}
-          className={styles.navigation__item}
-        >
-          <HomeIcon className={styles.navigation__item__icon} />
-          <span className={styles.navigation__item__link}>
-            {t("Главная")}
-          </span>
-        </AppLink>
-
-        <AppLink
-          theme={AppLinkTheme.PRIMARY}
-          to={RoutePath.about}
-          className={styles.navigation__item}
-        >
-          <InfoIcon className={styles.navigation__item__icon}/>
-          <span className={styles.navigation__item__link}>
-            {t("O сайте")}
-          </span>
-        </AppLink>
+        {SidebarItemsList.map((item) => (
+          <SidebarItem item={item} key={item.path} collapsed={collapsed}/>
+        ))}
 
       </div>
-
-
-
       <div className={styles.switchers}>
         <LangSwitcher shortName={collapsed}/>
         <ThemeSwitcher/>
       </div>
-
     </div>
   )
-}
+})

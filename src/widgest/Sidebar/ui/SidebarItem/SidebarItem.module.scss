@@ -1,0 +1,31 @@
+.navigation__item {
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  padding: 8px;
+  justify-content: flex-start;
+
+  &__icon {
+    width: var(--font-line-m);
+    height: var(--font-line-m);
+    fill: var(--primary-color);
+    display: flex;
+    margin-right: 12px;
+  }
+
+  &__link {
+    display: inline-block;
+  }
+}
+
+.collapsed {
+  .navigation__item {
+    &__link {
+      display: none;
+      transition: display 0.2s ease-in-out;
+    }
+
+    &__icon {
+      margin: 0 auto;
+    }
+  }
+}

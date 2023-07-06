@@ -4,8 +4,8 @@ import { useTheme } from "app/providers/ThemeProvider"
 import { AppRouter } from "app/providers/router"
 import { Navbar } from "widgest/Navbar"
 import { Sidebar } from "widgest/Sidebar"
-import { useAppDispatch } from "app/providers/StoreProvider/config/store"
 import { userActions } from "app/entities/User/model/slice/userSlice"
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch"
 
 const App = () => {
   const { theme } = useTheme()

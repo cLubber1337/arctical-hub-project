@@ -3,12 +3,13 @@ import { classNames } from "shared/lib/classNames/classNames"
 import { useTranslation } from "react-i18next"
 import { Button } from "shared/ui/Button/Button"
 import { useTheme } from "app/providers/ThemeProvider"
+import { memo } from "react"
 
 interface PageErrorProps {
     className?: string
 }
 
-export const PageError = ({ className }: PageErrorProps) => {
+export const PageError = memo(({ className }: PageErrorProps) => {
   const { t } = useTranslation()
   const { theme } = useTheme()
 
@@ -22,6 +23,6 @@ export const PageError = ({ className }: PageErrorProps) => {
       <Button onClick={reloadPage} className="testBtn">{t("Обновить страницу")}</Button>
     </div>
   )
-}
+})
 
 

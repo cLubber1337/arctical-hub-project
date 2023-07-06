@@ -17,5 +17,6 @@
   "Логин": "Login",
   "Авторизация": "Authorization",
   "Неверный логин или пароль": " Incorrect login or password",
-  "Выйти": "Logout"
+  "Выйти": "Logout",
+  "Профиль": "Profile"
 }

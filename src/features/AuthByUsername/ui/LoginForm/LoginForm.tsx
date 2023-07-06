@@ -6,7 +6,6 @@ import { Input } from "shared/ui/Input/Input"
 import { memo, useCallback } from "react"
 import { loginActions, loginReducer } from "features/AuthByUsername/model/slice/loginSlice"
 import { loginByUsername } from "features/AuthByUsername/model/services/loginByUsername/loginByUsername"
-import { useAppDispatch } from "app/providers/StoreProvider/config/store"
 import { useSelector } from "react-redux"
 import { Text, TextTheme } from "shared/ui/Text/Text"
 import { selectLoginUsername } from "../../model/selectors/selectLoginUsername/selectLoginUsername"
@@ -14,16 +13,19 @@ import { selectLoginPassword } from "../../model/selectors/selectLoginPassword/s
 import { selectLoginError } from "../../model/selectors/selectLoginError/selectLoginError"
 import { selectLoginIsLoading } from "../../model/selectors/selectLoginIsLoading/selectLoginIsLoading"
 import { DynamicModuleLoader, ReducerList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch"
 
 
 export interface LoginFormProps {
     className?: string
+    onSuccess: () => void
 }
+
 const initialReducers: ReducerList = {
   login: loginReducer,
 }
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
 
@@ -39,9 +41,12 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     dispatch(loginActions.setPassword({ password }))
   }, [dispatch])
 
-  const onLoginClick = useCallback(() => {
-    dispatch(loginByUsername({ username, password }))
-  }, [dispatch, password, username])
+  const onLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }))
+    if (result.meta.requestStatus === "fulfilled") {
+      onSuccess()
+    }
+  }, [dispatch, password, username, onSuccess])
 
 
   return (

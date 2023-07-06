@@ -20,7 +20,6 @@ test("test set password", () => {
         state as LoginSchema,
         loginActions.setPassword({ password: "123" })))
     .toEqual({ password: "123" })
-
 })
 
 
