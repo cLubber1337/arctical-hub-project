@@ -1,7 +1,9 @@
 module.exports = {
   "globals": {
     "require": true,
-    "__dirname": true
+    "__dirname": true,
+    "__API__": true,
+    "__IS_DEV__": true
   },
   env: {
     "browser": true,
@@ -59,5 +61,6 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
     "no-param-reassign": "off",
+    "no-undef": "off"
   }
 }

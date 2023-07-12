@@ -1,5 +1,5 @@
 import styles from "./Modal.module.scss"
-import { classNames } from "shared/lib/classNames/classNames"
+import { classNames, Mods } from "shared/lib/classNames/classNames"
 import React, { ReactNode, useCallback, useEffect, useRef, useState } from "react"
 import { useTheme } from "app/providers/ThemeProvider"
 import { Portal } from "shared/ui/Portal/Portal"
@@ -20,7 +20,7 @@ export const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps
   const timerRef = useRef<NodeJS.Timeout>()
   const { theme } = useTheme()
 
-  const mods = {
+  const mods : Mods = {
     [styles.opened]: isOpen,
     [styles.isClosed]: isClosed,
   }

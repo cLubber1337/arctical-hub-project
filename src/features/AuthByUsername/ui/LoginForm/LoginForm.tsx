@@ -3,7 +3,7 @@ import { classNames } from "shared/lib/classNames/classNames"
 import { useTranslation } from "react-i18next"
 import { Button, ButtonVariant } from "shared/ui/Button/Button"
 import { Input } from "shared/ui/Input/Input"
-import { memo, useCallback } from "react"
+import React, { memo, useCallback } from "react"
 import { loginActions, loginReducer } from "features/AuthByUsername/model/slice/loginSlice"
 import { loginByUsername } from "features/AuthByUsername/model/services/loginByUsername/loginByUsername"
 import { useSelector } from "react-redux"
@@ -48,11 +48,20 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     }
   }, [dispatch, password, username, onSuccess])
 
+  const onEnterKeyDown = useCallback((event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Enter") {
+      onLoginClick()
+    }
+  }, [onLoginClick])
+
 
   return (
   // eslint-disable-next-line i18next/no-literal-string
     <DynamicModuleLoader removeAfterUnmount={true} reducers={initialReducers}>
-      <div className={classNames(styles.LoginForm, {}, [className])}>
+      <div
+        className={classNames(styles.LoginForm, {}, [className])}
+        onKeyDown={onEnterKeyDown}
+      >
         <Text title={t("Авторизация")}/>
         {error && <Text text={error} theme={TextTheme.ERROR}/>}
         <div className={styles.input__block}>

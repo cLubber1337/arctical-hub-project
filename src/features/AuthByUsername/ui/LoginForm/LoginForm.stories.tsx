@@ -8,17 +8,17 @@ import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDeco
 export default {
   title: "features/LoginForm",
   component: LoginForm,
-  args: {},
+  args: {
+    placeholder: "Войти",
+    value: "user@mail.com"
+  },
 } as ComponentMeta<typeof LoginForm>
 
 const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args}/>
 
 
 export const Primary = Template.bind({})
-Primary.args = {
-  placeholder: "Войти",
-  value: "user@mail.com"
-}
+Primary.args = {}
 Primary.decorators = [StoreDecorator({
   login: { username: "user@mail.com", password: "password" }
 })]
@@ -26,9 +26,6 @@ Primary.decorators = [StoreDecorator({
 // Error
 export const WithError = Template.bind({})
 WithError.args = {
-  placeholder: "Войти",
-  value: "user@mail.com",
-  error: "error"
 }
 WithError.decorators = [StoreDecorator({
   login: { username: "user@mail.com", password: "password", error: "error" }
@@ -37,8 +34,6 @@ WithError.decorators = [StoreDecorator({
 // Loading
 export const Loading = Template.bind({})
 Loading.args = {
-  placeholder: "Войти",
-  value: "user@mail.com",
 }
 Loading.decorators = [StoreDecorator({
   login: { username: "user@mail.com", password: "password", isLoading: true }
@@ -46,8 +41,6 @@ Loading.decorators = [StoreDecorator({
 //Dark Theme
 export const PrimaryDark = Template.bind({})
 PrimaryDark.args = {
-  placeholder: "Войти",
-  value: "user@mail.com"
 }
 PrimaryDark.decorators = [StoreDecorator({
   login: { username: "user@mail.com", password: "password" }

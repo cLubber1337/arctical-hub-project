@@ -6,7 +6,7 @@ import { SidebarItemType } from "widgest/Sidebar/model/items"
 import { classNames } from "shared/lib/classNames/classNames"
 
 interface SidebarItemProps {
-    item?: SidebarItemType
+    item: SidebarItemType
     collapsed?: boolean
 }
 
@@ -15,7 +15,6 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
   const { path, Icon, text } = item
   const { t } = useTranslation()
 
-  console.log(collapsed)
   return (
     <AppLink
       theme={AppLinkTheme.PRIMARY}

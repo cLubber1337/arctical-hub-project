@@ -1,5 +1,5 @@
 import styles from "./Button.module.scss"
-import { classNames } from "shared/lib/classNames/classNames"
+import { classNames, Mods } from "shared/lib/classNames/classNames"
 import { ButtonHTMLAttributes, memo, ReactNode } from "react"
 
 export enum ButtonVariant {
@@ -33,7 +33,7 @@ export const Button = memo(({
   ...otherProps
 }: ButtonProps) => {
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [styles.circle]: circle,
     [styles.disabled]: disabled,
   }
