@@ -1,8 +1,8 @@
-import { Button, ButtonVariant } from "shared/ui/Button/Button"
-import { useDispatch, useSelector } from "react-redux"
-import { counterActions } from "app/entities/counter/model/slice/counterSlice"
-import { selectCounterValue } from "../model/selectors/selectCounterValue/selectCounterValue"
-import { useTranslation } from "react-i18next"
+import { Button, ButtonVariant } from 'shared/ui/Button/Button'
+import { useDispatch, useSelector } from 'react-redux'
+import { counterActions } from 'app/entities/counter/model/slice/counterSlice'
+import { selectCounterValue } from '../model/selectors/selectCounterValue/selectCounterValue'
+import { useTranslation } from 'react-i18next'
 
 
 export const Counter = () => {
@@ -26,14 +26,14 @@ export const Counter = () => {
         variant={ButtonVariant.OUTLINE}
         onClick={inc}
       >
-        {t("Увеличить")}
+        {t('Увеличить')}
       </Button>
       <Button
         data-testid="dec-btn"
         variant={ButtonVariant.OUTLINE}
         onClick={dec}
       >
-        {t("Уменьшить")}
+        {t('Уменьшить')}
       </Button>
     </div>
   )

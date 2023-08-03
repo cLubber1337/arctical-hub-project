@@ -1,0 +1,88 @@
+.select {
+  position: relative;
+}
+
+.button {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: var(--color-bg-input);
+  border: 1px solid var(--color-border-input);
+  border-radius: 6px;
+
+  &:disabled {
+    cursor: auto;
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 6px;
+      box-shadow: 0 0 0 2px var(--color-btn-bg-primary);
+    }
+  }
+}
+
+.options {
+  position: absolute;
+  top: 38px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--color-bg-input);
+  border: 1px solid var(--color-border-input);
+  border-radius: 6px;
+  z-index: 1;
+
+  &:focus-visible {
+    outline: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 6px;
+      box-shadow: 0 0 0 2px var(--color-btn-bg-primary);
+    }
+  }
+}
+
+.option {
+  cursor: pointer;
+  padding: 6px 12px;
+
+  &:hover {
+    color: var(--color-accent-300);
+    background-color: var(--color-btn-bg-primary);
+  }
+}
+
+.activeItem {
+  background-color: var(--color-btn-bg-primary);
+}
+
+.option:first-child {
+  border-radius: 6px 6px 0 0;
+}
+
+.option:last-child {
+  border-radius: 0 0 6px 6px;
+}
+
+.fullWidth {
+  position: relative;
+  width: 100%;
+}
+
+.editMode {
+  border-color: var(--color-btn-bg-primary);
+}

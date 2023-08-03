@@ -1,11 +1,11 @@
-import { CombinedState, configureStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit"
-import { StateSchema } from "../config/StateSchema"
-import { counterReducer } from "app/entities/counter"
-import { userReducer } from "app/entities/User"
-import { createReducerManager } from "app/providers/StoreProvider/config/reducerManager"
-import { $api } from "api/api"
-import { To } from "@remix-run/router"
-import { NavigateOptions } from "react-router/dist/lib/context"
+import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
+import { StateSchema } from '../config/StateSchema'
+import { counterReducer } from 'app/entities/counter'
+import { userReducer } from 'app/entities/User'
+import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager'
+import { $api } from 'api/api'
+import { To } from '@remix-run/router'
+import { NavigateOptions } from 'react-router/dist/lib/context'
 
 export function createReduxStore(
   initialState?: StateSchema,
@@ -42,7 +42,7 @@ export function createReduxStore(
 }
 
 
-export type AppDispatch = ReturnType<typeof createReduxStore>["dispatch"];
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
 
 
 

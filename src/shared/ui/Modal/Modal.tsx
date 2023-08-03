@@ -1,8 +1,8 @@
-import styles from "./Modal.module.scss"
-import { classNames, Mods } from "shared/lib/classNames/classNames"
-import React, { ReactNode, useCallback, useEffect, useRef, useState } from "react"
-import { useTheme } from "app/providers/ThemeProvider"
-import { Portal } from "shared/ui/Portal/Portal"
+import styles from './Modal.module.scss'
+import { classNames, Mods } from 'shared/lib/classNames/classNames'
+import React, { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import { useTheme } from 'app/providers/ThemeProvider'
+import { Portal } from 'shared/ui/Portal/Portal'
 
 const ANIMATION_DELAY = 300
 
@@ -38,7 +38,7 @@ export const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps
   }, [onClose])
 
   const keyHandler = useCallback((e: KeyboardEvent) => {
-    if (e.code === "Escape") {
+    if (e.code === 'Escape') {
       closeHandler()
     }
   }, [closeHandler])
@@ -55,12 +55,12 @@ export const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps
 
   useEffect(() => {
     if (isOpen) {
-      window.addEventListener("keydown", keyHandler)
+      window.addEventListener('keydown', keyHandler)
     }
 
     return () => {
       clearTimeout(timerRef.current)
-      window.removeEventListener("keydown", keyHandler)
+      window.removeEventListener('keydown', keyHandler)
     }
   }, [isOpen, keyHandler])
 

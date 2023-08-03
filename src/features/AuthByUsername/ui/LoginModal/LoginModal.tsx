@@ -1,7 +1,7 @@
-import { Modal } from "shared/ui/Modal/Modal"
-import { Suspense } from "react"
-import { LoginFormAsync } from "features/AuthByUsername/ui/LoginForm/LoginForm.async"
-import { Loader } from "shared/ui/Loader/Loader"
+import { Modal } from 'shared/ui/Modal/Modal'
+import { Suspense } from 'react'
+import { LoginFormAsync } from 'features/AuthByUsername/ui/LoginForm/LoginForm.async'
+import { Loader } from 'shared/ui/Loader/Loader'
 
 interface LoginModalProps {
     isOpen: boolean

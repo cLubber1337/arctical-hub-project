@@ -1,30 +1,32 @@
-import React from "react"
-import { RoutePath } from "shared/config/routeConfig/routeConfig"
-import HomeIcon from "shared/assets/icons/home.svg"
-import InfoIcon from "shared/assets/icons/info.svg"
-import ProfileIcon from "shared/assets/icons/profile.svg"
+import React from 'react'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import HomeIcon from 'shared/assets/icons/home.svg'
+import InfoIcon from 'shared/assets/icons/info.svg'
+import ProfileIcon from 'shared/assets/icons/profile.svg'
 
 export interface SidebarItemType {
     path: string
     text: string
     Icon: React.VFC<React.SVGProps<SVGSVGElement>>
+    authOnly?: boolean
 }
 
 export const SidebarItemsList: SidebarItemType[] = [
   {
     path: RoutePath.main,
-    text: "Главная",
+    text: 'Главная',
     Icon: HomeIcon
   },
   {
     path: RoutePath.about,
-    text: "O сайте",
+    text: 'O сайте',
     Icon: InfoIcon
   },
   {
     path: RoutePath.profile,
-    text: "Профиль",
-    Icon: ProfileIcon
+    text: 'Профиль',
+    Icon: ProfileIcon,
+    authOnly: true
   }
 
 ]

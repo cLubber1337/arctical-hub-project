@@ -1,8 +1,8 @@
-import { selectCounter } from "app/entities/counter/model/selectors/selectCounter/selectCounter"
-import { StateSchema } from "app/providers/StoreProvider"
+import { selectCounter } from 'app/entities/counter/model/selectors/selectCounter/selectCounter'
+import { StateSchema } from 'app/providers/StoreProvider'
 
-describe("selectCounter", () => {
-  test("should return counter value", () => {
+describe('selectCounter', () => {
+  test('should return counter value', () => {
     const state: DeepPartial<StateSchema> = {
       counter: {
         value: 10

@@ -1,11 +1,11 @@
-import styles from "./Sidebar.module.scss"
-import { classNames } from "shared/lib/classNames/classNames"
-import React, { memo, useState } from "react"
-import { Button, ButtonSize, ButtonVariant } from "shared/ui/Button/Button"
-import { ThemeSwitcher } from "shared/ui/ThemeSwitcher"
-import { LangSwitcher } from "shared/ui/LangSwitcher/LangSwitcher"
-import { SidebarItemsList } from "widgest/Sidebar/model/items"
-import { SidebarItem } from "widgest/Sidebar/ui/SidebarItem/SidebarItem"
+import styles from './Sidebar.module.scss'
+import { classNames } from 'shared/lib/classNames/classNames'
+import React, { memo, useState } from 'react'
+import { Button, ButtonSize, ButtonVariant } from 'shared/ui/Button/Button'
+import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
+import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher'
+import { SidebarItemsList } from 'widgest/Sidebar/model/items'
+import { SidebarItem } from 'widgest/Sidebar/ui/SidebarItem/SidebarItem'
 
 
 interface SidebarProps {
@@ -32,12 +32,16 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         size={ButtonSize.L}
         circle
       >
-        {collapsed ? ">" : "<"}
+        {collapsed ? '>' : '<'}
       </Button>
 
       <div className={styles.navigation}>
         {SidebarItemsList.map((item) => (
-          <SidebarItem item={item} key={item.path} collapsed={collapsed}/>
+          <SidebarItem
+            item={item}
+            key={item.path}
+            collapsed={collapsed}
+          />
         ))}
 
       </div>

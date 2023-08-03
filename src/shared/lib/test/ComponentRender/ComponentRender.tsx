@@ -1,9 +1,9 @@
-import { ReactNode } from "react"
-import { render } from "@testing-library/react"
-import { MemoryRouter } from "react-router-dom"
-import i18nForTests from "../../../config/i18n/i18nForTests"
-import { I18nextProvider } from "react-i18next"
-import { StateSchema, StoreProvider } from "app/providers/StoreProvider"
+import { ReactNode } from 'react'
+import { render } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
+import i18nForTests from '../../../config/i18n/i18nForTests'
+import { I18nextProvider } from 'react-i18next'
+import { StateSchema, StoreProvider } from 'app/providers/StoreProvider'
 
 
 export interface ComponentRenderOptions {
@@ -13,7 +13,7 @@ export interface ComponentRenderOptions {
 
 
 export const ComponentRender =
-    (component: ReactNode, { route = "/", initialState }: ComponentRenderOptions = {}) => {
+    (component: ReactNode, { route = '/', initialState }: ComponentRenderOptions = {}) => {
       return render(
         <MemoryRouter initialEntries={[route]}>
           <StoreProvider initialState={initialState}>

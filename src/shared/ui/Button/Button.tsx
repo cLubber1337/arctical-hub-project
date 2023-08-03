@@ -1,19 +1,20 @@
-import styles from "./Button.module.scss"
-import { classNames, Mods } from "shared/lib/classNames/classNames"
-import { ButtonHTMLAttributes, memo, ReactNode } from "react"
+import styles from './Button.module.scss'
+import { classNames, Mods } from 'shared/lib/classNames/classNames'
+import { ButtonHTMLAttributes, memo, ReactNode } from 'react'
 
 export enum ButtonVariant {
-    CLEAR = "clear",
-    OUTLINE = "outline",
-    CONTAINED = "contained",
+    CLEAR = 'clear',
+    OUTLINE = 'outline',
+    OUTLINE_RED = 'outline_red',
+    CONTAINED = 'contained',
+
 }
 
 export enum ButtonSize {
-    M = "size_m",
-    L = "size_l",
-    XL = "size_xl",
+    M = 'size_m',
+    L = 'size_l',
+    XL = 'size_xl',
 }
-
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string

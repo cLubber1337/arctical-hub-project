@@ -1,5 +1,5 @@
-import React, { ErrorInfo, ReactNode, Suspense } from "react"
-import { PageError } from "widgest/PageError"
+import React, { ErrorInfo, ReactNode, Suspense } from 'react'
+import { PageError } from 'widgest/PageError'
 
 
 interface Props {

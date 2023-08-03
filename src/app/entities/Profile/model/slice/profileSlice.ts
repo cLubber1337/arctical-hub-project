@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { fetchProfileData, ProfileSchema, ProfileType } from "app/entities/Profile"
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { fetchProfileData, ProfileSchema, ProfileType, updateProfileData } from 'app/entities/Profile'
 
 
 const initialState: ProfileSchema = {
@@ -10,12 +10,26 @@ const initialState: ProfileSchema = {
 }
 
 const profileSlice = createSlice({
-  name: "profile",
+  name: 'profile',
   initialState,
-  reducers: {},
+  reducers: {
+    setReadonly(state, action: PayloadAction<boolean>) {
+      state.readonly = action.payload
+    },
+    cancelEdit(state) {
+      state.readonly = true
+      state.form = state.data
+    },
+    updateProfile(state, action: PayloadAction<ProfileType>) {
+      state.form = {
+        ...state.form,
+        ...action.payload
+      }
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchProfileData.pending, (state) => {
-      state.error = ""
+      state.error = ''
       state.isLoading = true
     })
     builder.addCase(fetchProfileData.fulfilled,
@@ -23,9 +37,23 @@ const profileSlice = createSlice({
       ) => {
         state.isLoading = false
         state.data = action.payload
+        state.form = action.payload
 
       })
     builder.addCase(fetchProfileData.rejected, (state, action) => {
+      state.isLoading = false
+      state.error = action.payload
+    })
+    builder.addCase(updateProfileData.pending, (state) => {
+      state.error = ''
+      state.isLoading = true
+    })
+    builder.addCase(updateProfileData.fulfilled, (state, action) => {
+      state.isLoading = false
+      state.data = action.payload
+      state.form = action.payload
+    })
+    builder.addCase(updateProfileData.rejected, (state, action) => {
       state.isLoading = false
       state.error = action.payload
     })

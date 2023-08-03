@@ -1,9 +1,9 @@
-import styles from "./PageError.module.scss"
-import { classNames } from "shared/lib/classNames/classNames"
-import { useTranslation } from "react-i18next"
-import { Button } from "shared/ui/Button/Button"
-import { useTheme } from "app/providers/ThemeProvider"
-import { memo } from "react"
+import styles from './PageError.module.scss'
+import { classNames } from 'shared/lib/classNames/classNames'
+import { useTranslation } from 'react-i18next'
+import { Button } from 'shared/ui/Button/Button'
+import { useTheme } from 'app/providers/ThemeProvider'
+import { memo } from 'react'
 
 interface PageErrorProps {
     className?: string
@@ -19,8 +19,8 @@ export const PageError = memo(({ className }: PageErrorProps) => {
 
   return (
     <div className={classNames(styles.PageError, {}, [className, theme])}>
-      <p>{t("Произошла непредвиденная ошибка")}</p>
-      <Button onClick={reloadPage} className="testBtn">{t("Обновить страницу")}</Button>
+      <p>{t('Произошла непредвиденная ошибка')}</p>
+      <Button onClick={reloadPage} className="testBtn">{t('Обновить страницу')}</Button>
     </div>
   )
 })

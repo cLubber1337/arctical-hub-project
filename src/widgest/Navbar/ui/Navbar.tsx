@@ -1,13 +1,13 @@
-import React, { memo, useCallback, useState } from "react"
-import styles from "./Navbar.module.scss"
-import { classNames } from "shared/lib/classNames/classNames"
-import { Button, ButtonVariant } from "shared/ui/Button/Button"
-import { useTranslation } from "react-i18next"
-import { LoginModal } from "features/AuthByUsername"
-import { useSelector } from "react-redux"
-import { selectUserAuthData } from "app/entities/User"
-import { userActions } from "app/entities/User/model/slice/userSlice"
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch"
+import React, { memo, useCallback, useState } from 'react'
+import styles from './Navbar.module.scss'
+import { classNames } from 'shared/lib/classNames/classNames'
+import { Button, ButtonVariant } from 'shared/ui/Button/Button'
+import { useTranslation } from 'react-i18next'
+import { LoginModal } from 'features/AuthByUsername'
+import { useSelector } from 'react-redux'
+import { selectUserAuthData } from 'app/entities/User'
+import { userActions } from 'app/entities/User/model/slice/userSlice'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 
 export const Navbar = memo(() => {
@@ -20,7 +20,7 @@ export const Navbar = memo(() => {
     setIsAuthModal(false)
   }, [])
 
-  console.log(userAuthData, "test")
+  console.log(userAuthData, 'test')
 
   const onShowModal = useCallback(() => {
     setIsAuthModal(true)
@@ -28,7 +28,7 @@ export const Navbar = memo(() => {
 
   const onLogout = useCallback(() => {
     dispatch(userActions.logout())
-  },[dispatch])
+  }, [dispatch])
 
   if (userAuthData) {
     return (
@@ -38,10 +38,11 @@ export const Navbar = memo(() => {
           variant={ButtonVariant.CLEAR}
           className={styles.links}
         >
-          {t("Выйти")}
+          {t('Выйти')}
         </Button>
       </div>
-    )}
+    )
+  }
 
   return (
     <div className={classNames(styles.navbar)}>
@@ -50,7 +51,7 @@ export const Navbar = memo(() => {
         variant={ButtonVariant.CLEAR}
         className={styles.links}
       >
-        {t("Войти")}
+        {t('Войти')}
       </Button>
 
       {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal}/>}

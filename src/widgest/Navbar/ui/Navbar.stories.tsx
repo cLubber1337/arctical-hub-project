@@ -1,12 +1,12 @@
-import { Meta, StoryObj } from "@storybook/react"
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator"
-import { Theme } from "app/providers/ThemeProvider"
-import { Navbar } from "./Navbar"
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator"
+import { Meta, StoryObj } from '@storybook/react'
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { Theme } from 'app/providers/ThemeProvider'
+import { Navbar } from './Navbar'
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 
 
 const meta: Meta<typeof Navbar> = {
-  title: "widget/Navbar",
+  title: 'widget/Navbar',
   component: Navbar,
   args: {
   }
@@ -26,7 +26,7 @@ export const Dark: Story = {
 export const AuthNavbar: Story = {
   args: {},
   decorators:[ThemeDecorator(Theme.DARK),
-    StoreDecorator({ user: { authData:{ username: "admin", id: "1" } } })]
+    StoreDecorator({ user: { authData:{ username: 'admin', id: '1' } } })]
 }
 
 

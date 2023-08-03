@@ -1,12 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit"
-import { CounterSchema } from "app/entities/counter/model/types/counterSchema"
+import { createSlice } from '@reduxjs/toolkit'
+import { CounterSchema } from 'app/entities/counter/model/types/counterSchema'
 
 const initialState: CounterSchema = {
   value: 0
 }
 
 const counterSlice = createSlice({
-  name: "counter",
+  name: 'counter',
   initialState,
   reducers: {
     increment: (state) => {

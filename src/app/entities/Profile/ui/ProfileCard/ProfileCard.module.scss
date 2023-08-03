@@ -1,23 +1,55 @@
 .ProfileCard {
   padding: 12px;
-  border: 2px solid var(--primary-color);
-  margin: 20px;
-}
-
-.header {
-  display: flex;
-}
-
-.editBtn {
-  margin-left: auto;
+  margin-top: 20px;
 }
 
 .data {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  gap: 12px;
+  max-width: 500px;
 }
 
-input {
-  margin-top: 10px;
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  p {
+    min-width: 120px;
+    color: var(--color-btn-bg-primary);
+    text-align: end;
+  }
+}
+
+.avatar {
+  width: 100%;
+  display: flex;
+  margin-bottom: 12px;
+  user-select: none;
+  justify-content: center;
+}
+
+.img {
+  margin-left: 120px;
+}
+
+.editMode {
+  border-color: var(--color-btn-bg-primary) !important;
+
+  &:focus {
+    border-color: var(--color-btn-hover-primary) !important;
+  }
 }

@@ -1,14 +1,14 @@
-import React from "react"
-import { ComponentMeta, ComponentStory } from "@storybook/react"
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator"
-import { Theme } from "app/providers/ThemeProvider"
-import { Button, ButtonVariant } from "./Button"
+import React from 'react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { Theme } from 'app/providers/ThemeProvider'
+import { Button, ButtonVariant } from './Button'
 
 export default {
-  title: "shared/Button",
+  title: 'shared/Button',
   component: Button,
   args: {
-    children: "Button",
+    children: 'Button',
   },
 } as ComponentMeta<typeof Button>
 
@@ -38,7 +38,7 @@ export const Circle = Template.bind({})
 Circle.args = {
   variant: ButtonVariant.CONTAINED,
   circle: true,
-  children: ">"
+  children: '>'
 }
 
 // Theme color in dark
@@ -58,7 +58,7 @@ export const CircleDark = Template.bind({})
 CircleDark.args = {
   variant: ButtonVariant.CONTAINED,
   circle: true,
-  children: ">"
+  children: '>'
 }
 CircleDark.decorators = [ThemeDecorator(Theme.DARK)]
 

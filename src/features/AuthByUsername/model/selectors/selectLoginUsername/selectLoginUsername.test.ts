@@ -1,17 +1,17 @@
-import { StateSchema } from "app/providers/StoreProvider"
-import { selectLoginUsername } from "./selectLoginUsername"
+import { StateSchema } from 'app/providers/StoreProvider'
+import { selectLoginUsername } from './selectLoginUsername'
 
-describe("selectLoginUsername.test", () => {
-  test("should return current username", () => {
+describe('selectLoginUsername.test', () => {
+  test('should return current username', () => {
 
     const state: DeepPartial<StateSchema> = {
       login: {
-        username: "andrey"
+        username: 'andrey'
       }
     }
-    expect(selectLoginUsername(state as StateSchema)).toEqual("andrey")
+    expect(selectLoginUsername(state as StateSchema)).toEqual('andrey')
   })
-  test("should return '' with empty state", () => {
+  test('should return \'\' with empty state', () => {
     const state: DeepPartial<StateSchema> = {}
-    expect(selectLoginUsername(state as StateSchema)).toEqual("")})
+    expect(selectLoginUsername(state as StateSchema)).toEqual('')})
 })

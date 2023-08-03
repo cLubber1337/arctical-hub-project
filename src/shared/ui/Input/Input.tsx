@@ -1,9 +1,9 @@
-import styles from "./Input.module.scss"
-import { classNames } from "shared/lib/classNames/classNames"
-import React, { HTMLInputTypeAttribute, InputHTMLAttributes, memo, useEffect, useRef } from "react"
+import s from './Input.module.scss'
+import { classNames, Mods } from 'shared/lib/classNames/classNames'
+import React, { HTMLInputTypeAttribute, InputHTMLAttributes, memo, useEffect, useRef } from 'react'
 
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange">
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readonly'>
 
 interface InputProps extends HTMLInputProps {
     className?: string
@@ -12,10 +12,20 @@ interface InputProps extends HTMLInputProps {
     type?: HTMLInputTypeAttribute
     placeholder?: string
     autoFocus?: boolean
+    readonly?: boolean
+    fullwidth?: boolean
 }
 
 export const Input = memo(({
-  className, value, onChange, type = "text", placeholder, autoFocus, ...otherProps
+  className,
+  value,
+  onChange,
+  type = 'text',
+  placeholder,
+  fullwidth,
+  autoFocus,
+  readonly,
+  ...otherProps
 }: InputProps) => {
   const ref = useRef<HTMLInputElement>(null)
 
@@ -30,6 +40,11 @@ export const Input = memo(({
 
   }, [autoFocus])
 
+  const mods: Mods = {
+    [s.readonly]: readonly,
+    [s.fullWidth]: fullwidth,
+  }
+
   return (
     <input
       ref={ref}
@@ -37,7 +52,8 @@ export const Input = memo(({
       onChange={onChangeHandler}
       placeholder={placeholder}
       type={type}
-      className={classNames(styles.Input, {}, [className])}
+      readOnly={readonly}
+      className={classNames(s.Input, mods, [className])}
       {...otherProps}
     />
   )

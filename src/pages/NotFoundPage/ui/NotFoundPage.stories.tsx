@@ -1,11 +1,11 @@
-import { Meta, StoryObj } from "@storybook/react"
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator"
-import { Theme } from "app/providers/ThemeProvider"
-import { NotFoundPage } from "./NotFoundPage"
+import { Meta, StoryObj } from '@storybook/react'
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { Theme } from 'app/providers/ThemeProvider'
+import { NotFoundPage } from './NotFoundPage'
 
 
 const meta: Meta<typeof NotFoundPage> = {
-  title: "pages/NotFoundPage",
+  title: 'pages/NotFoundPage',
   component: NotFoundPage,
   args: {}
 }

@@ -1,11 +1,11 @@
-import { CounterSchema } from "app/entities/counter"
-import { UserSchema } from "app/entities/User/model/types/user"
-import { LoginSchema } from "features/AuthByUsername/model/types/loginSchema"
-import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit"
-import { ProfileSchema } from "app/entities/Profile"
-import { AxiosInstance } from "axios"
-import { To } from "@remix-run/router"
-import { NavigateOptions } from "react-router/dist/lib/context"
+import { CounterSchema } from 'app/entities/counter'
+import { UserSchema } from 'app/entities/User/model/types/user'
+import { LoginSchema } from 'features/AuthByUsername/model/types/loginSchema'
+import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
+import { ProfileSchema } from 'app/entities/Profile'
+import { AxiosInstance } from 'axios'
+import { To } from '@remix-run/router'
+import { NavigateOptions } from 'react-router/dist/lib/context'
 
 export interface StateSchema {
     counter: CounterSchema
@@ -32,7 +32,9 @@ export interface ThunkExtraArg {
     api: AxiosInstance
     navigate?: (to: To, options?: NavigateOptions) => void
 }
-export interface  ThunkConfig<T> {
+
+export interface ThunkConfig<T> {
     rejectValue: T
     extra: ThunkExtraArg
+    state: StateSchema
 }

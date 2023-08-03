@@ -1,12 +1,12 @@
-import { StateSchema } from "app/providers/StoreProvider"
-import { AsyncThunkAction } from "@reduxjs/toolkit"
-import axios, { AxiosStatic } from "axios"
+import { StateSchema } from 'app/providers/StoreProvider'
+import { AsyncThunkAction } from '@reduxjs/toolkit'
+import axios, { AxiosStatic } from 'axios'
 
 type ActionCreatorType<ReturnType, Arg, RejectedValue>
     = (arg: Arg) => AsyncThunkAction<ReturnType, Arg, { rejectValue: RejectedValue }>
 
 
-jest.mock("axios")
+jest.mock('axios')
 const mockedAxios = jest.mocked(axios, true)
 
 
