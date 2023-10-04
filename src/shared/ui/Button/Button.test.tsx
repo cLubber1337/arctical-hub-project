@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
 
+
 describe('Button', () => {
   test('Test render', () => {
     // eslint-disable-next-line i18next/no-literal-string

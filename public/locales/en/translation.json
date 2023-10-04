@@ -19,5 +19,6 @@
   "Неверный логин или пароль": " Incorrect login or password",
   "Выйти": "Logout",
   "Профиль": "Profile",
-  "Имя": "Name"
+  "Имя": "Name",
+  "На главную": "Back to main page"
 }

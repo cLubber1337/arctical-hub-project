@@ -17,3 +17,4 @@ export { selectProfileIsLoading } from './model/selectors/selectProfileIsLoading
 export { selectProfileError } from './model/selectors/selectProfileError/selectProfileError'
 export { selectProfileReadOnly } from './model/selectors/selectProfileReadOnly/selectProfileReadOnly'
 export { selectProfileForm } from './model/selectors/selectProfileForm/selectProfileForm'
+export { selectProfileValidateErrors } from './model/selectors/selectProfileValidateErrors/selectProfileValidateErrors'
