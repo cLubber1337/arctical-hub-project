@@ -2,7 +2,7 @@ import { StateSchema } from 'app/providers/StoreProvider'
 import { selectLoginError } from './selectLoginError'
 
 describe('selectLoginError.test', () => {
-  test('should return error', () => {
+  test('should return data', () => {
 
     const state: DeepPartial<StateSchema> = {
       login: {
@@ -11,7 +11,8 @@ describe('selectLoginError.test', () => {
     }
     expect(selectLoginError(state as StateSchema)).toEqual('error')
   })
-  test('should return undefined with empty state', () => {
+  test('should return undefined', () => {
     const state: DeepPartial<StateSchema> = {}
-    expect(selectLoginError(state as StateSchema)).toEqual(undefined)})
+    expect(selectLoginError(state as StateSchema)).toEqual(undefined)
+  })
 })

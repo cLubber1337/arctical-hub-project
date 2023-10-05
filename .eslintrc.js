@@ -3,7 +3,8 @@ module.exports = {
     'require': true,
     '__dirname': true,
     '__API__': true,
-    '__IS_DEV__': true
+    '__IS_DEV__': true,
+    '__PROJECT__': true
   },
   env: {
     'browser': true,
